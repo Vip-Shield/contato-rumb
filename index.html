@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CONTATO RUMB</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             display: grid;
@@ -29,7 +30,7 @@
 
    
         .card {
-            width: 400px;
+            width: 100%;
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -254,5 +255,23 @@ a :hover{
 <img src="img/whatsapp.png" width="70px" alt="Fale conosco pelo Whatsapp" title="Fale conosco pelo Whatsapp">
 </a>
 </div>
+<!-- INÍCIO DO FORMULÁRIO -->
+<section>
+    <h2>Contato a RUMB</h2>
+<form action="https://api.staticforms.xyz/submit" method="post">
+<label>Nome e RG</label>
+<input type="text" name="name" placeholder="Digite seu nome e RG" autocomplete="off" required>
+<label>E-mail ou WhatsApp</label>
+<input type="text" name="e-mail" placeholder="Digite seu e-mail ou WhatsApp" autocomplete="off" required>
+<label>Mensagem</label>
+<textarea name="message" cols="30" rows="10" placeholder="Digite sua mensagem para o Quartilheiro da RUMB" required></textarea>
+<button type="submit">Enviar</button>
+
+<input type="hidden" name="accessKey" value="10a28c28-05a5-4862-928a-248ecb6fbe0c">
+<input type="hidden" name="redirectTo" value="https://vip-shield.github.io/contato-rumb/obrigado.html">
+</form>
+</section>
+<!-- FINAL DO FORMULÁRIO -->
+
 </body>
 </html>
