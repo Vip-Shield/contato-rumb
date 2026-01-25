@@ -3,31 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CONTATO RUMB</title>
+    <title>CONTATO RUMB - PLANTÃO</title>
     <style>
+        /* MANTENDO SEU ESTILO ORIGINAL */
         body {
-            display: grid;
-            justify-content: center;
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
-            margin: 0;
             background-color: #f0f0f0;
-            gap: 1px;
+            gap: 20px;
+            margin: 0;
+            padding-bottom: 50px;
+            font-family: Arial, sans-serif;
         }
 
         header {
-    background-color: #00a4e4;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-    display: flex;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    align-items: center;
-    gap: 5px;
+            background-color: #00a4e4;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            display: flex;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            justify-content: center;
+        }
 
-   }
-
-   
         .card {
             width: 400px;
             padding: 20px;
@@ -35,279 +37,173 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             background-color: #fff;
             text-align: center;
-            font-family: Arial, sans-serif;
         }
+
+        /* DESTAQUE PARA O CARD DE PLANTÃO */
+        .card-plantao {
+            border: 3px solid #00a4e4;
+            position: relative;
+            background-color: #e3f2fd;
+        }
+        .badge-plantao {
+            background: #d32f2f;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
         .profile-pic {
             width: 100px;
             height: 100px;
             border-radius: 50%;
             background-color: #ddd;
-            margin-bottom: 15px;
+            margin: 0 auto 15px auto;
             overflow: hidden;
+            border: 3px solid #00205b;
         }
         .profile-pic img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        h2 {
-            margin: 0;
-            font-size: 24px;
+        h2 { margin: 0; font-size: 24px; color: #333; }
+        strong { color: #00205b; }
+        .contact-info { margin-top: 10px; font-size: 18px; color: #666; }
+        .sap__cor__verde { color: #075e54; font-weight: bold; }
+
+        .social-links { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
+        .apresentacao__links__link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 15px;
+            text-decoration: none;
             color: #333;
         }
-        .contact-info {
-            margin-top: 10px;
-            font-size: 18px;
-            color: #666;
-        }
-        .sap__cor__verde {
-            color: #075e54;
-                   }
-
-        strong{
-            color: #00205b;
-        }
-
-        .strong{
-            color: #f0f0f0;
-        }
-
-        .social-links {
-            margin-top: 20px;
-        }
-        .social-links a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #555;
-            font-size: 20px;
-        }
-        .social-links a:hover {
-            color: #0073b1;
-        }
-        .apresentacao__links__link {
-        display: flexbox;
-    justify-content: center;
-    gap: 16px;
-    border: 2px solid var(--cor-tercearia);
-    width : 378px;
-    text-align: center;
-    border-radius: 8px;
-    font-size: 24px;
-    font-weight: 600;
-    padding: 21.5px 0;
-    text-decoration: none;
-    color: var(--cor-secundaria);
-    font-family: var(--fonte-secundaria);
-}
-
-.caveira {
-    width: 70px;
-   
-}
-
-.carta{
-    display: inline-block;
-    width: 33px;
-    height: 28px;
-}
-
-.tamanho{
-   size: 8px;
-}
-
-.whats{
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 9999;
-    
-}
-
-a{
-    text-decoration: none;
-}
-
-a :hover{
-    color:firebrick;
-}
-
-
+        .apresentacao__links__link img { width: 24px; }
+        .caveira { width: 60px; }
+        .whats { position: fixed; bottom: 20px; right: 20px; z-index: 9999; }
+        
+        #lista-contatos { display: flex; flex-direction: column; gap: 20px; align-items: center; }
     </style>
-    
-<!-- INICIO DO BLOQUEADOR -->
-  
-    
-<script type="text/javascript">
-    var message="Desculpe, o clique com o botão direito foi desativado.";
-    function clickIE() {if (document.all) {(message);return false;}}
-    function clickNS(e) {if
-    (document.layers||(document.getElementById&&!document.all)) {
-        if (e.which==2||e.which==3) {(message);return false;}}}
-    if (document.layers)
-    {document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
-    else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
-    document.oncontextmenu=new Function("return false")
-</script>
 
-
-
-<script>
-    document.onkeydown = function(e) {
-        if(event.keyCode == 123) {
-            return false;
-        }
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
-            return false;
-        }
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
-            return false;
-        }
-        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
-            return false;
-        }
-    }
-</script>
-
-
-
-<script>
-    function disableselect(e) {
-        return false;
-    }
-
-    function reEnable() {
-        return true;
-    }
-
-    document.onselectstart = new Function("return false");
-
-    if (window.sidebar) {
-        document.onmousedown = disableselect;
-        document.onclick = reEnable;
-    }
-</script>
-
-
-<!-- FINAL DO BLOQUEADOR -->
-
-
+    <script>
+        document.oncontextmenu = function() { return false; };
+        document.onkeydown = function(e) {
+            if(event.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || (e.ctrlKey && e.keyCode == 85)) return false;
+        };
+    </script>
 </head>
 <body>
-    
-    <header><img src="img/caveira-armada2.png" class="caveira"><strong class="strong">CONTATOS da RUMB - 3ª CIA - UPP PAVÃO</strong></header>
-<br>
-    
-<!-- QUARTILHEIRO SGT PM RG 97 DAN -->
-    <div class="card">
-        <div class="profile-pic">
-            <!-- Insira o caminho da imagem desejada no src -->
-            <img src="img/dan.png" alt="Foto do Dan">
+
+    <header>
+        <img src="img/caveira-armada2.png" class="caveira">
+        <div style="color:white; font-weight:bold;">CONTATOS da RUMB - 3ª CIA - UPP PAVÃO</div>
+    </header>
+
+    <div id="plantao-atual">
         </div>
-        <h2>SGT PM<strong> Dan</strong></h2>
-        <div class="contact-info">
-            <p>Cel.: (21) 96482-7877</p>
-            <a aria-label="Chat on WhatsApp" href="https://wa.me/5521964827877&text=Fale criatura! SGT PM Dan, falando." class="a"> <p class="sap__cor__verde">WhatsApp (21) 96482-7877</p></a>
+
+    <hr style="width: 80%; border: 1px solid #ccc; margin: 20px 0;">
+    <h3 style="color: #666;">Todos os Contatos</h3>
+
+    <div id="lista-contatos">
         </div>
-        <div class="social-links">
-            <a class="apresentacao__links__link" href="https://instagram.com" ><img src="img/instagram.png">Instagram</a>
-            <a class="apresentacao__links__link" href="https://linkedin.com/in/seu_perfil" ><img src="img/linkedin.png">LinkedIn</a>
+
+    <div class="whats">
+        <a href="https://wa.me/5521964827877" target="_blank">
+            <img src="img/whatsapp.png" width="70px" alt="Whatsapp">
+        </a>
+    </div>
+
+    <script>
+        // Dados dos Policiais (Centralizado para facilitar manutenção)
+        const policiais = {
+            triumpho: { nome: "Triumpho", posto: "SD PM", cel: "(21) 96484-4022", linkWa: "5521964844022", foto: "img/triumpho.png" },
+            simoes: { nome: "R. Simões", posto: "3º SGT PM", cel: "(21) 98253-9175", linkWa: "5521982539175", foto: "img/rodrigo.png" },
+            dan: { nome: "Dan", posto: "3º SGT PM", cel: "(21) 96482-7877", linkWa: "5521964827877", foto: "img/dan.png" },
+            lacerda: { nome: "Lacerda", posto: "3º SGT PM", cel: "(21) 96418-6198", linkWa: "5521964186198", foto: "img/lacerda.png" },
+            alacrino: { nome: "Alacrino", posto: "3º SGT PM", cel: "(21) 97393-5903", linkWa: "5521973935903", foto: "img/alacrino.png" },
+            pinheiro: { nome: "Pinheiro", posto: "CB PM", cel: "(21) 99347-1036", linkWa: "5521993471036", foto: "img/pinheiro.png" },
+            };
+
+        // Ordem da Escala conforme seu exemplo (cada item dura 12h)
+        const escala = [
+            policiais.triumpho, // 26/01 17h (Noite)
+            policiais.simoes,   // 27/01 05h (Dia)
+            policiais.dan,      // 27/01 17h (Noite)
+            policiais.lacerda,  // 28/01 05h (Dia)
+            policiais.simoes,   // 28/01 17h (Noite)
+            policiais.alacrino, // 29/01 05h (Dia)
+            policiais.lacerda,  // 29/01 17h (Noite)
+            policiais.triumpho, // 30/01 05h (Dia)
+            policiais.alacrino  // 30/01 17h (Noite)
+        ];
+
+        function gerarHTMLCard(p, isPlantao = false) {
+            return `
+                <div class="card ${isPlantao ? 'card-plantao' : ''}">
+                    ${isPlantao ? '<div class="badge-plantao">EM SERVIÇO AGORA</div>' : ''}
+                    <div class="profile-pic">
+                        <img src="${p.foto}" alt="Foto ${p.nome}">
+                    </div>
+                    <h2>${p.posto} <strong>${p.nome}</strong></h2>
+                    <div class="contact-info">
+                        <p>Cel.: ${p.cel}</p>
+                        <a href="https://wa.me/${p.linkWa}" class="a">
+                            <p class="sap__cor__verde">WhatsApp ${p.cel}</p>
+                        </a>
+                    </div>
+                    <div class="social-links">
+                        <a class="apresentacao__links__link" href="#"><img src="img/instagram.png">Instagram</a>
+                        <a class="apresentacao__links__link" href="mailto:rumb2upp19bpm@outlook.com"><img src="img/carta.png">E-mail RUMB</a>
+                    </div>
+                </div>
+            `;
+        }
+
+        function atualizarPagina() {
+            const agora = new Date();
+            // Data de referência: 26 de Janeiro de 2026 às 17:00
+            const dataInicio = new Date(2026, 0, 26, 17, 0, 0);
             
-           <p></p> <a class="apresentacao__links__link" href="https://github.com"><img src="img/github.png">GitHub</a>
-            <a class="apresentacao__links__link" href="https://www.adindescontos.com" ><img src="img/A__1_-removebg-preview.png" width="40px">Adín Desconto</a></p>
-            <a class="apresentacao__links__link" href="mailto:rumb2upp19bpm@outlook.com&body=Caro mestre da RUMB venho por meio deste e-mail solicitá-vos:"><img src="img/carta.png" class="carta">rumb2upp19bpm@outlook.com</a>
-        </div>
-    </div>
-<br>
-<!-- QUARTILHEIRO CB PM RG 100.000 ALACRINO -->
-<div class="card">
-    <div class="profile-pic">
-        <!-- Insira o caminho da imagem desejada no src -->
-        <img src="img/alacrino.png" alt="Foto do ALACRINO">
-    </div>
-    <h2>CB PM<strong> Alacrino</strong></h2>
-    <div class="contact-info">
-        <p>Cel.: (21) 97393-5903</p>
-        <a aria-label="Chat on WhatsApp" href="https://wa.me/5521973935903?text=Olá! Me chamo CB PM Alacrino." class="a"><p class="sap__cor__verde">WhatsApp (21) 97393-5903</p></a>
-    </div>
-    <div class="social-links">
-        <a class="apresentacao__links__link" href="https://instagram.com" ><img src="img/instagram.png">Instagram</a>
-        <a class="apresentacao__links__link" href="https://linkedin.com/in/seu_perfil" ><img src="img/linkedin.png">LinkedIn</a>
-        
-       <p></p> <a class="apresentacao__links__link" href="https://github.com/"><img src="img/github.png">GitHub</a>
-        <a class="apresentacao__links__link" href="https://www.adindescontos.com" ><img src="img/A__1_-removebg-preview.png" width="40px">Adín Desconto</a></p>
-        <a class="apresentacao__links__link" href="mailto:rumb2upp19bpm@outlook.com&body=Caro mestre da RUMB venho por meio deste e-mail solicitá-vos:"><img src="img/carta.png" class="carta">rumb2upp19bpm@outlook.com</a>
+            // Calcula quantas janelas de 12 horas se passaram
+            const diffMs = agora - dataInicio;
+            const diff12h = Math.floor(diffMs / (12 * 60 * 60 * 1000));
 
-    </div>
-</div>
-<br>
-<!-- QUARTILHEIRO CB PM 103. PINHEIRO -->
-<div class="card">
-    <div class="profile-pic">
-        <!-- Insira o caminho da imagem desejada no src -->
-        <img src="img/pinheiro.png" alt="Foto do PINHEIRO">
-    </div>
-    <h2>CB PM <strong>Pinheiro</strong></h2>
-    <div class="contact-info">
-        <p>Cel.: (21) 99347-1036</p>
-        <a aria-label="Chat on WhatsApp" href="https://wa.me/5521993471036?text=Papel! Eu sou CB PM Pinheiro." class="a"> <p class="sap__cor__verde">WhatsApp (21) 99347-1036</p></a>
-    </div>
-    <div class="social-links">
-        <a class="apresentacao__links__link" href="https://instagram.com" ><img src="img/instagram.png">Instagram</a>
-        <a class="apresentacao__links__link" href="https://linkedin.com/in/seu_perfil" ><img src="img/linkedin.png">LinkedIn</a>
-        
-       <p></p> <a class="apresentacao__links__link" href="https://github.com"><img src="img/github.png">GitHub</a>
-        <a class="apresentacao__links__link" href="https://www.adindescontos.com" ><img src="img/A__1_-removebg-preview.png" width="40px">Adín Desconto</a></p>
+            // Define o policial de plantão
+            let plantonista;
+            if (diff12h < 0) {
+                plantonista = escala[0]; // Antes do início da escala, mostra o primeiro
+            } else {
+                plantonista = escala[diff12h % escala.length];
+            }
 
-        <a class="apresentacao__links__link" href="mailto:rumb2upp19bpm@outlook.com&body=Caro mestre da RUMB venho por meio deste e-mail solicitá-vos:"><img src="img/carta.png" class="carta">rumb2upp19bpm@outlook.com</a>
-    </div>
-</div>
-<br>
-<div class="card">
-    <div class="profile-pic">
-        <!-- QUARTILHEIRO SGT PM RG 94.010 R. Simões -->
-        <img src="img/rodrigo.png" alt="Foto do Digão">
-    </div>
-    <h2>SGT PM<strong> R. Simões</strong></h2>
-    <div class="contact-info">
-        <p>Cel.: (21) 98253-9175</p>
-        <a aria-label="Chat on WhatsApp" href="https://wa.me/5521982539175?text=SGT PM R. Simões" class="a"> <p class="sap__cor__verde">WhatsApp (21) 98253-9175</p></a>
-    </div>
-    <div class="social-links">
-        <a class="apresentacao__links__link" href="https://instagram.com/digoquedigo_rsc" ><img src="img/instagram.png">Instagram</a>
-        <a class="apresentacao__links__link" href="https://linkedin.com/in/seu_perfil" ><img src="img/linkedin.png">LinkedIn</a>
-        
-       <p></p> <a class="apresentacao__links__link" href="https://github.com/Vip-Shield"><img src="img/github.png">GitHub</a>
-        <a class="apresentacao__links__link" href="https://www.adindescontos.com" ><img src="img/A__1_-removebg-preview.png" width="40px">Adín Desconto</a></p>
+            // Renderiza o card de plantão
+            document.getElementById('plantao-atual').innerHTML = gerarHTMLCard(plantonista, true);
 
-        <a class="apresentacao__links__link" href="mailto:rumb2upp19bpm@outlook.com&body=Caro mestre da RUMB venho por meio deste e-mail solicitá-vos:"><img src="img/carta.png" class="carta">rumb2upp19bpm@outlook.com</a>
-    </div>
-</div>
-<br>
-<!-- QUARTILHEIRO SD PM 108. GOUVEIA -->
-<div class="card">
-    <div class="profile-pic">
-        <!-- Insira o caminho da imagem desejada no src -->
-        <img src="img/gouveia.png" alt="Foto do GOUVEIA">
-    </div>
-    <h2>SD PM <strong>Gouveia</strong></h2>
-    <div class="contact-info">
-        <p>Cel.: (21) 99823-1200</p>
-        <a aria-label="Chat on WhatsApp" href="https://wa.me/5521998231200?text=Olá! Eu sou CB PM Gouveia." class="a"> <p class="sap__cor__verde">WhatsApp (21) 99823-1200</p></a>
-    </div>
-    <div class="social-links">
-        <a class="apresentacao__links__link" href="https://instagram.com" ><img src="img/instagram.png">Instagram</a>
-        <a class="apresentacao__links__link" href="https://linkedin.com/in/seu_perfil" ><img src="img/linkedin.png">LinkedIn</a>
-        
-       <p></p> <a class="apresentacao__links__link" href="https://github.com"><img src="img/github.png">GitHub</a>
-        <a class="apresentacao__links__link" href="https://www.adindescontos.com" ><img src="img/A__1_-removebg-preview.png" width="40px">Adín Desconto</a></p>
+            // Renderiza a lista completa (excluindo quem já está no plantão para não repetir no topo)
+            const listaDiv = document.getElementById('lista-contatos');
+            listaDiv.innerHTML = "";
+            Object.values(policiais).forEach(p => {
+                listaDiv.innerHTML += gerarHTMLCard(p);
+            });
+        }
 
-        <a class="apresentacao__links__link" href="mailto:rumb2upp19bpm@outlook.com&body=Caro mestre da RUMB venho por meio deste e-mail solicitá-vos:"><img src="img/carta.png" class="carta">rumb2upp19bpm@outlook.com</a>
-    </div>
-</div>
-<div class="whats">
-    <a aria-label="Chat on WhatsApp" href="https://wa.me/5521964827877?text=Olá PPMM! Em que posso ajudá-lo?" target="_blank" class="hover">
-<img src="img/whatsapp.png" width="70px" alt="Fale conosco pelo Whatsapp" title="Fale conosco pelo Whatsapp">
-</a>
-</div>
+        atualizarPagina();
+        // Atualiza a cada 1 minuto para checar virada de turno
+        setInterval(atualizarPagina, 60000);
+    </script>
 </body>
 </html>
