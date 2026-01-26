@@ -8,7 +8,6 @@
         body { display: flex; flex-direction: column; align-items: center; background-color: #f0f0f0; margin: 0; font-family: Arial, sans-serif; gap: 20px; padding-bottom: 80px; }
         header { background-color: #00a4e4; color: white; padding: 1rem; width: 100%; display: flex; justify-content: center; align-items: center; gap: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
         
-        /* ESTILO DOS CARDS */
         .card { width: 400px; padding: 20px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); background-color: #fff; text-align: center; border: 1px solid #ddd; margin-bottom: 10px; }
         .card-plantao { border: 3px solid #00205b; background-color: #e3f2fd; position: relative; margin-top: 20px; }
         .badge { background: #d32f2f; color: white; padding: 5px 15px; border-radius: 20px; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 12px; }
@@ -20,16 +19,13 @@
         strong { color: #00205b; }
         .sap__cor__verde { color: #075e54; font-weight: bold; text-decoration: none; }
         
-        /* LINKS SOCIAIS */
         .social-links { margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
         .apresentacao__links__link { display: flex; align-items: center; justify-content: center; gap: 10px; border: 1px solid #ccc; border-radius: 8px; padding: 12px; text-decoration: none; color: #333; font-weight: 600; }
         .apresentacao__links__link img { width: 25px; }
 
-        /* ESTILO DA CONSULTA (FINAL DA PÁGINA) */
         .busca-container { background: #00205b; color: white; width: 400px; padding: 20px; border-radius: 15px; text-align: center; box-sizing: border-box; margin-top: 30px; }
         .busca-container input { padding: 10px; width: 85%; border-radius: 5px; border: none; margin: 10px 0; font-size: 16px; text-align: center; }
         .btn-busca { background: #00a4e4; color: white; border: none; padding: 12px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 85%; transition: 0.3s; }
-        .btn-busca:hover { background: #0089c2; }
         #resultado-busca { margin-top: 15px; padding: 10px; border-radius: 8px; background: rgba(255,255,255,0.1); min-height: 40px; display: none; }
 
         .caveira { width: 60px; }
@@ -70,7 +66,6 @@
     </div>
 
     <script>
-        // Banco de Dados dos PPMM
         const db = {
             triumpho: { posto: "SD PM", nome: "Triumpho", cel: "(21) 96484-4022", wa: "5521964844022", foto: "img/triumpho.png" },
             simoes: { posto: "3º SGT PM", nome: "R. Simões", cel: "(21) 98253-9175", wa: "5521982539175", foto: "img/rodrigo.png" },
@@ -79,14 +74,22 @@
             alacrino: { posto: "3º SGT PM", nome: "Alacrino", cel: "(21) 97393-5903", wa: "5521973935903", foto: "img/alacrino.png" }
         };
 
-        // Ciclo da escala (Turnos de 12h)
+        // SEQUÊNCIA COMPLETA (Ciclo de 10 turnos de 12 horas)
         const sequenciaEscala = [
-            db.dan, db.triumpho, db.simoes, db.dan, db.lacerda, db.simoes, 
-            db.alacrino, db.lacerda, db.triumpho, db.alacrino
+            db.dan,      // 0: 26/01 05h
+            db.triumpho, // 1: 26/01 17h
+            db.simoes,   // 2: 27/01 05h
+            db.dan,      // 3: 27/01 17h
+            db.lacerda,  // 4: 28/01 05h
+            db.simoes,   // 5: 28/01 17h
+            db.alacrino, // 6: 29/01 05h
+            db.lacerda,  // 7: 29/01 17h
+            db.triumpho, // 8: 30/01 05h
+            db.alacrino  // 9: 30/01 17h
         ];
 
-        // Referência Inicial: 26/01/2026 às 05:00
-        const dataReferencia = new Date(2026, 0, 26, 17, 0, 0);
+        // Referência Inicial: 26/01/2026 às 05:00 (Início do Dan)
+        const dataReferencia = new Date(2026, 0, 26, 5, 0, 0);
 
         function criarCard(p, isPlantao = false) {
             return `
@@ -108,8 +111,10 @@
             const diffMs = dataAlvo - dataReferencia;
             const blocos12h = Math.floor(diffMs / (12 * 60 * 60 * 1000));
             
-            if (blocos12h < 0) return sequenciaEscala[0];
-            return sequenciaEscala[blocos12h % sequenciaEscala.length];
+            // Lógica circular para 10 turnos
+            const n = sequenciaEscala.length;
+            const index = ((blocos12h % n) + n) % n;
+            return sequenciaEscala[index];
         }
 
         function atualizarPagina() {
@@ -143,7 +148,7 @@
         }
 
         atualizarPagina();
-        setInterval(atualizarPagina, 300000); // Atualiza o plantão a cada 5 min
+        setInterval(atualizarPagina, 60000); 
     </script>
 </body>
 </html>
